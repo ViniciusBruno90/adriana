@@ -1,0 +1,73 @@
+01-CONFIGURANDO VSC
+
+
+Vai no vsc vai em EXTENSOES
+
+-LIVE SERVER -- RITWICK DEY
+-OMNI THEME ---- ROCKSEAT
+-MATERIAL ICON THEME -- PHILIPP KIEF
+-PRETTIER -  CODE FORMATTER
+
+
+02-Criar uma pasta na area de trabalho chamada Projeto
+
+feito isso arrasta a pasta para o VSC
+
+Apos isso criar uma nova pasta dentro dela como (.vscode) e logo em seguida um arquivo
+chamado (settings.json).
+
+03-No arquivo settings.json colar o seguinte comando.
+
+ {
+  // editor
+  "editor.wordWrap": "on",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 30,
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.autoSave": "afterDelay",
+
+  // explorer
+  "explorer.compactFolders": false,
+
+  // workbench
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Omni",
+
+  // prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.enable": true,
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+
+  // terminal
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
+
+
+04-Criar outro arquivo chamado (extensions.json) e colar dentro dele.
+
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "PKief.material-icon-theme",
+    "rocketseat.theme-omni",
+    "ritwickdey.LiveServer"
+  ]
+}
+
+
+
+

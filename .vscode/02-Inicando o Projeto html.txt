@@ -1,0 +1,8 @@
+Inicando o Projeto html
+
+01-Apos configurado o VSC, vai criar um novo arquivo chamado (index.html)
+
+02-Depois abrir ele e da uma "! e um enter" (com isso com as extensões que criamos ele vai auto completar o cabecalho do nosso html).
+
+
+

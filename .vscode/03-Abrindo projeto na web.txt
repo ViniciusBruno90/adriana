@@ -1,0 +1,8 @@
+Abrindo projeto na web
+01-por padrao você abriria a pasta do projeto e iria da dois cliques no arquivo index,
+porém vamos fazer diferente.
+
+
+02- vamos no VSC com o botao direito no index.html 
+e abrir com " open with Live Server"
+

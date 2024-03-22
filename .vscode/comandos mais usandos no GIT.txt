@@ -1,0 +1,34 @@
+comandos mais usandos no GIT
+
+projtos ja no git 
+copia o comando html "https://github.com/ViniciusBruno90/projeto.git"
+abrir o terminal gitbash
+
+git clone + link do projeto https://github.com/ViniciusBruno90/projeto.git
+
+git add . "o ponto significa tudo, mais pode subir o arquivo especifico"
+
+git commit -m "comentario do que foi feito"
+
+gip push para envio para o git
+
+esse processo aqui é quando a maquina ta do zero
+comandos no terminal
+
+git config --global user.name "ViniciusBruno"
+git config --global user.email "bruno_kelvezu@hotmail.com"
+
+git -v  * verifica a versao do git*
+
+
+git init
+*inicia o git (repositório) no seu projeto so quando for novo
+
+git add .
+*adiciona todos os arquivos modificados, ao stage
+
+git commit -m "message here"
+*cria e descreve um ponto na historia
+
+git push
+*envia alterações para o repositório remoto

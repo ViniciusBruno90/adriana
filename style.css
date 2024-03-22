@@ -1,0 +1,301 @@
+/* https://fonts.google.com/  site das fontes */
+/*caniuse.com  ai verifica a propriedade e quais browser estao aceitando essa propriedade */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*= a medida do tamanho da caixa  pela borda*/
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --highlight-color: rgba(255, 255, 255, 0.5);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.lighty {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.5);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /* "PARA FAZER OS CODIGOS ABAIXO FICAR EM UM UNICO AGRUPAMENTO" */
+
+  /*da para transformar essas 4 linhas em uma unica linha exemplo*/
+  /* background: var(--bg-url); no-repeat top center/cover;*/
+
+  background: var(--bg-url);
+  /* background-image: url(./assets/bg-mobile.jpg); */
+  background-repeat: no-repeat; /* para n ocorrer repeticao da imagem na tela */
+  background-position: top center; /* eixo x e y da tela */
+  background-size: cover; /* COVER vai cobrir toda parte lateral do celular ou aba.*/
+  height: 100vh;
+
+  /*background: color image repeat position/size */
+  /* background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 100%; /*largura*/
+  /* max-width: 588px; */
+  margin: 56px auto 0px; /* 56px top  auto =laterais e  0px embaixo
+ /* height: 712px; altura */
+  /*margin: auto; */
+  /* "margin-right: auto  direita"  e "margin-left: auto esquerda"  ou "margin: auto que ja ajusta ambos os lados", ira fazer com que a centralize a caixa*/
+  /*padding-top: 56px;*/
+  padding: 0 24px;
+}
+
+/* PROFILE */
+#profile {
+  text-align: center; /*dessa forma caso n faça a aplicação em display consigo fazer que os text em line consiga alinhar conforme minha demanda direita esquerda centro.*/
+  padding: 24px;
+}
+
+#profile img {
+  /* "display: block; " /* para poder usar o margin em elemento line tenho q por como block*/
+  width: 112px; /*elementos em line nao se da para aplicar margin: auto*/
+  /* "margin: auto; */
+}
+
+#profile p {
+  font-weight: 500;
+  /*font-size: 16px;*/
+  line-height: 24px; /*altura da linha*/
+  margin-top: 8px;
+}
+
+/* SWTICH */
+#swtich {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto; /* com o display block da para se por margem 0 para o elmento ficar bem ao centro e automatizar as bordas laterais*/
+}
+
+#swtich button {
+  width: 32px; /* WIDTH LARGURA*/
+  height: 32px; /* ALTURA */
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1; /* aqui seria em qual andar ou camada o item vai estar*/
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+}
+
+#swtich button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.lighty #swtich button {
+  animation: slide-in 0.2s forwards; /* forwards = manter as propriedades feitas na animation*/
+
+  /* right: 0;
+  left: initial; */
+}
+
+#swtich span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color); /* stroke-colo-dark-mome*/
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* aqui tem q por para que funcione em outros navegadores tbm*/
+  border-radius: 9999px;
+}
+
+/*links */
+ul {
+  list-style: none;
+
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap; /*preencher o maximo possivel para gerar uma quebra */
+  justify-content: center;
+  max-width: 1280px;
+  margin: auto;
+  gap: 16px;
+  padding: 24px 0;
+  /*display: flex;
+  flex-direction: column;
+  gap: 8px;*/
+}
+
+ul li {
+  /*display: flex;*/
+}
+
+ul li a {
+  /*display: flex;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  /*font-weight: bold;  tirar duvida*/
+
+  transition: all 0.2s;
+}
+
+/* pseudo-selector esse hover, aplica-se as coisas quando se passa o mouse em cima*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/*social lins*/
+#social-links {
+  display: flex;
+  /*gap: 16px; /* espaço entre o elementos*/
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%; /* borda com 50% vira uma bolinha perfeita*/
+  transition: background 02s;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* media queries */
+/* essa opcao do @media so funciona se no index tiver <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLinks</title>,  adicionado*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .lighty {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+/* animation */
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 1280px;
+  margin: auto;
+}
+
+.produto {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+
+  display: inline-block;
+}
+
+.produto .image {
+  width: 200px;
+  height: auto;
+}
+
+.produto h3 {
+  font-size: 14px;
+  color: black;
+}
+
+.produto p {
+  font-size: 12px;
+  color: black;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
