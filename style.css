@@ -145,10 +145,6 @@ ul {
   gap: 8px;*/
 }
 
-ul li {
-  /*display: flex;*/
-}
-
 ul li a {
   /*display: flex;*/
   display: flex;
