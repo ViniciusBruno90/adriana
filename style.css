@@ -6,6 +6,13 @@
   box-sizing: border-box; /*= a medida do tamanho da caixa  pela borda*/
 }
 
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
@@ -35,12 +42,9 @@ body {
   background: var(--bg-url);
   /* background-image: url(./assets/bg-mobile.jpg); */
   background-repeat: no-repeat; /* para n ocorrer repeticao da imagem na tela */
-  background-position: top center; /* eixo x e y da tela */
+  background-position: center; /* eixo x e y da tela */
   background-size: cover; /* COVER vai cobrir toda parte lateral do celular ou aba.*/
-  height: 100vh;
-
-  /*background: color image repeat position/size */
-  /* background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; */
+  /* height: 100vh; */
 }
 
 body * {
@@ -236,12 +240,36 @@ footer {
   }
 }
 
+#filtroCategorias {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filtro {
+  padding: 10px 20px;
+  margin: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: #444;
+  color: white;
+}
+
+.filtro:hover {
+  background: #a09f9f;
+}
+
+.filtro-ativo {
+  background: #a09f9f;
+  color: white;
+}
+
 #catalogo {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
+  align-items: stretch;
 
-  max-width: 1280px;
+  max-width: 970px;
   margin: auto;
 }
 
@@ -252,21 +280,29 @@ footer {
   border-radius: 8px;
   background-color: #fff;
 
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .produto .image {
-  width: 200px;
-  height: auto;
+  width: 150px;
+  height: 185px;
 }
 
 .produto h3 {
-  font-size: 14px;
+  font-size: 12px;
+  color: black;
+}
+
+.produto h4 {
+  margin-top: 2px;
+  font-size: 10px;
   color: black;
 }
 
 .produto p {
-  font-size: 12px;
+  font-size: 10px;
   color: black;
 }
 
@@ -298,4 +334,25 @@ footer {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  #catalogo {
+    justify-content: center;
+  }
+
+  .produto .image {
+    width: 120px;
+    height: auto;
+  }
+
+  .produto h3 {
+    font-size: 8px;
+    color: black;
+  }
+
+  .produto p {
+    font-size: 6px;
+    color: black;
+  }
 }
