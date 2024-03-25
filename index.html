@@ -97,7 +97,7 @@
         >
           Fantasia
         </button>
-      </div>
+
         <button
           class="filtro"
           data-categoria="pijama"
@@ -105,7 +105,7 @@
         >
           Pijama
         </button>
-      </div>
+
         <button
           class="filtro"
           data-categoria="bory"
@@ -114,8 +114,19 @@
           Bory
         </button>
       </div>
+      <!-- End Filtros -->
+
       <!-- catalogo -->
       <div id="catalogo"></div>
+      <!-- End Catalogo -->
+
+      <div id="paginacao">
+        <button id="btnAnterior" onclick="mudarPagina(-1)">&laquo; Anterior</button>
+
+        <span id="infoPagina"></span>
+
+        <button id="btnProximo" onclick="mudarPagina(1)">Próximo &raquo;</button>
+      </div>
 
       <div id="social-links">
         <!--link dos icones https://ionic.io/ionicons-->

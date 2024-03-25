@@ -356,3 +356,27 @@ button {
     color: black;
   }
 }
+
+#paginacao {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#paginacao button {
+  background: #444;
+  border: none;
+  color: white;
+
+  padding: 7px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#paginacao button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#paginacao #infoPagina{
+  font-size: 12px;
+}

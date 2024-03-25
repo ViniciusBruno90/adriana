@@ -1661,20 +1661,31 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ]
 
+  const produtoPorPagina = 15
+  let paginaAtual = 1
+  let categoriaAtual = "todos"
+
   const catalogElement = document.getElementById("catalogo")
   const modalElement = document.getElementById("modal")
   const modalImageElement = document.getElementById("imgModal")
   const closeModalElement = document.getElementById("closeModal")
 
   function exibirProdutos(filtro) {
-    catalogElement.innerHTML = ""
+    categoriaAtual = filtro
+
+    const inicio = (paginaAtual - 1) * produtoPorPagina
+    const fim = inicio + produtoPorPagina
 
     const produtosFiltrados =
       filtro === "todos"
         ? products
         : products.filter((product) => product.category === filtro)
 
-    produtosFiltrados.forEach((product) => {
+    const produtosPaginados = produtosFiltrados.slice(inicio, fim)
+
+    catalogElement.innerHTML = "" // Faz limpeza do conteúdo anterior, para adicionar os novos itens
+
+    produtosPaginados.forEach((product) => {
       const productElement = document.createElement("div")
       productElement.className = "produto"
 
@@ -1704,6 +1715,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       catalogElement.appendChild(productElement)
     })
+
+    atualizarPaginacao(produtosFiltrados.length, paginaAtual)
+  }
+
+  function mudarPagina(incremento) {
+    paginaAtual += incremento
+    exibirProdutos(categoriaAtual)
+  }
+
+  function atualizarPaginacao(totalProdutos, pagina) {
+    const numPagina = Math.ceil(totalProdutos / produtoPorPagina)
+    document.getElementById(
+      "infoPagina"
+    ).textContent = `Página ${pagina} de ${numPagina}`
+
+    document.getElementById("btnAnterior").disabled = pagina === 1
+    document.getElementById("btnProximo").disabled = pagina === numPagina
   }
 
   function atualizarFiltroAtivo(novaCategoria) {
@@ -1721,9 +1749,13 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   window.filtrarCategoria = function (category) {
+    paginaAtual = 1
+
     exibirProdutos(category)
     atualizarFiltroAtivo(category)
   }
+
+  window.mudarPagina = mudarPagina
 
   exibirProdutos("todos")
   atualizarFiltroAtivo("todos")
