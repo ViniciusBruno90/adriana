@@ -16,11 +16,15 @@
   <body>
     <div id="container">
       <div id="profile">
-        <img
-          src="./assets/avatar.png"
-          alt="Foto de Vinicius no TAF guarda na faculdade ESTACIO"
-        />
+        <img src="./assets/avatar.png" alt="Foto de Adriana" />
+
         <p>@adrianaaraujo</p>
+        <a
+          id="whats"
+          href="https://www.instagram.com/adrianaarraujo/?igsh=bzg4MnNnZDJvNWZj"
+          target="_blank"
+          ><ion-icon name="logo-whatsapp"></ion-icon
+        ></a>
       </div>
       <div id="swtich" onclick="toggleMode()">
         <button></button>
@@ -34,19 +38,19 @@
         >
           Todos
         </button>
-        <button
+        <!-- <button
           class="filtro"
           data-categoria="hobby"
           onclick="filtrarCategoria('hobby')"
         >
           Hobby
-        </button>
+        </button> -->
         <button
           class="filtro"
-          data-categoria="babydool"
-          onclick="filtrarCategoria('babydool')"
+          data-categoria="babydoll"
+          onclick="filtrarCategoria('babydoll')"
         >
-          Babydool
+          Babydoll
         </button>
         <button
           class="filtro"
@@ -62,41 +66,41 @@
         >
           Calcinha
         </button>
-        <button
+        <!-- <button
           class="filtro"
           data-categoria="conjunto plus size"
           onclick="filtrarCategoria('Conjunto Plus Size')"
         >
           Conj. Plus Size
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           class="filtro"
           data-categoria="Conjunto Modelo Tifany"
           onclick="filtrarCategoria('Conjunto Modelo Tifany')"
         >
           Conj. Tifany
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           class="filtro"
           data-categoria="Short Segunda Pele"
           onclick="filtrarCategoria('Short Segunda Pele')"
         >
           Short Seg. Pele
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           class="filtro"
           data-categoria="Sutiâ"
           onclick="filtrarCategoria('Sutiâ')"
         >
           Sutiâ
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           class="filtro"
           data-categoria="fantasia"
           onclick="filtrarCategoria('fantasia')"
         >
           Fantasia
-        </button>
+        </button> -->
 
         <button
           class="filtro"
@@ -106,13 +110,13 @@
           Pijama
         </button>
 
-        <button
+        <!-- <button
           class="filtro"
           data-categoria="bory"
           onclick="filtrarCategoria('bory')"
         >
           Bory
-        </button>
+        </button> -->
       </div>
       <!-- End Filtros -->
 
@@ -121,11 +125,15 @@
       <!-- End Catalogo -->
 
       <div id="paginacao">
-        <button id="btnAnterior" onclick="mudarPagina(-1)">&laquo; Anterior</button>
+        <button id="btnAnterior" onclick="mudarPagina(-1)">
+          &laquo; Anterior
+        </button>
 
         <span id="infoPagina"></span>
 
-        <button id="btnProximo" onclick="mudarPagina(1)">Próximo &raquo;</button>
+        <button id="btnProximo" onclick="mudarPagina(1)">
+          Próximo &raquo;
+        </button>
       </div>
 
       <div id="social-links">
@@ -139,6 +147,18 @@
         >
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
+        <a
+          href="https://www.instagram.com/adrianaarraujo/?igsh=bzg4MnNnZDJvNWZj"
+          target="_blank"
+        >
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+        <!-- <a
+          href="https://www.instagram.com/adrianaarraujo/?igsh=bzg4MnNnZDJvNWZj"
+          target="_blank"
+        >
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a> -->
         <!-- <a href="https://www.youtube.com/@rocketseat" target="_blank">
           <ion-icon name="logo-youtube"></ion-icon>
         </a> -->
