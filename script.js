@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "assets/Babydool Luxo ref 02/Babydool Luxo ref1.png",
       category: "babydoll",
       price: "P - M - G - GG",
+      // offer: true
     },
     {
       name: "Babydoll Luxo Black",
@@ -810,6 +811,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "assets/Calcinha fio duplo lateral renda/Calcinha fio duplo lateral renda2.png",
       category: "calcinha",
       price: "M - G",
+      
     },
     {
       name: "Calcinha Lateral Renda ",
@@ -1658,6 +1660,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //   image: "assets/Bory Lorrany 13/Bory Lorrany4.png",
     //   category: "bory",
     //   price: "M - G",
+    //   sizes: "5gb"
+
     // },
   ]
 
@@ -1689,6 +1693,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const productElement = document.createElement("div")
       productElement.className = "produto"
 
+      const iconePromocaoElement = document.createElement("div")
+      iconePromocaoElement.className = "sale-offer"
+
       const imageElement = document.createElement("img")
       imageElement.src = product.image
       imageElement.className = "image"
@@ -1704,14 +1711,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const descriptionElement = document.createElement("p")
       descriptionElement.innerText = product.description
+      
+      // const sizeElement = document.createElement("p")
+      // sizeElement.innerText = product.sizes
 
       const priceElement = document.createElement("h4")
       priceElement.innerText = product.price
+
+      if(product.offer)
+        productElement.appendChild(iconePromocaoElement)
 
       productElement.appendChild(imageElement)
       productElement.appendChild(titleElement)
       productElement.appendChild(descriptionElement)
       productElement.appendChild(priceElement)
+      // productElement.appendChild(sizeElementElement)
 
       catalogElement.appendChild(productElement)
     })
